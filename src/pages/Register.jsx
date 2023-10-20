@@ -25,9 +25,10 @@ const {registerUser,updateUser}= useContext(AuthContext);
         })
     }
     return (
-        <div className="w-2/4 mx-auto">
-        <div className="hero-content">
-          <div className="card w-full shadow-2xl bg-base-100">
+        <div className="max-w-7xl mx-auto mb-10">
+      <div className="hero-content ">
+        
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handleRegister}>
               <div className="form-control">
                 <label className="label">

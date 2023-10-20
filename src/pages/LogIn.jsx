@@ -1,8 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const LogIn = () => {
+
+    const navigate = useNavigate();
 
   const {signInUser, signInWithGoogle, updateUser  } = useContext(AuthContext);
   const handleLogIn = (e) => {
@@ -16,6 +18,9 @@ const LogIn = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result);
+        setTimeout(() => {
+            navigate('/')
+        }, 3000);
       })
       .catch((error) => {
         console.log(error);
@@ -31,12 +36,15 @@ const LogIn = () => {
       const photo = result.user.photoURL;
       console.log(name,photo);
       updateUser(name,photo)
+      setTimeout(() => {
+        navigate('/')
+    }, 3000);
     });
   };
 
   return (
-    <div className="hero ">
-      <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className="max-w-7xl mx-auto mb-10">
+      <div className="hero-content ">
         
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={handleLogIn}>

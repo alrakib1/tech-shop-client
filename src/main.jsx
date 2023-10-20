@@ -10,10 +10,15 @@ import Home from './pages/Home.jsx';
 import LogIn from './pages/LogIn.jsx';
 import Register from './pages/Register.jsx';
 import AuthProvider from './providers/AuthProvider.jsx';
+import PrivateRoute from './private/PrivateRoute.jsx';
+import AddToCart from './pages/AddToCart.jsx';
+import MyCart from './pages/MyCart.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children : [
       {
         path : '/',
@@ -26,6 +31,19 @@ const router = createBrowserRouter([
       {
         path : '/register',
         element : <Register></Register>
+      },
+      {
+        path : '/add',
+        element: <PrivateRoute>
+          <AddToCart></AddToCart>
+        </PrivateRoute>
+      },
+      {
+        path: '/mycart',
+        element : <PrivateRoute>
+          <MyCart></MyCart>
+        </PrivateRoute>
+
       }
     ]
   },

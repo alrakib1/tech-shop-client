@@ -6,16 +6,20 @@ import app from "../services/firebase.config";
 
 
 const Navbar = () => {
-    const {user, logOutUser} = useContext(AuthContext);
+    const {loading, user, logOutUser} = useContext(AuthContext);
     
   const auth = getAuth(app);
 
+ 
 
   const [photoURL, setPhotoURL] = useState("");
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
     const user = auth.currentUser;
+    if(loading){
+        return <span className="loading loading-bars loading-lg"></span>
+    }
     if (user !== null) {
       const userPhotoURL = user.photoURL;
     const name = user.displayName;
@@ -25,7 +29,7 @@ const Navbar = () => {
       setPhotoURL("");
       setUserName('')
     }
-  }, [auth.currentUser]);
+  }, [auth.currentUser, loading]);
 
 
 
@@ -46,7 +50,7 @@ const Navbar = () => {
     }
     </>
     return (
-        <div className="navbar bg-base-100 mb-12">
+        <div className="navbar bg-base-100 mb-12 max-w-7xl mx-auto" >
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">

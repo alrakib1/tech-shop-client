@@ -3,7 +3,7 @@
 const Header = () => {
     return (
         <div>
-            <h3 className="text-4xl">this is header with logo</h3>
+            <img className="w-60 h-[160px] md:h-[180px] mx-auto" src="https://i.postimg.cc/7P7g9TZX/9857-techland-games-black.webp" alt="" />
         </div>
     );
 };

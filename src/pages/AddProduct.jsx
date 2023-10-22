@@ -20,23 +20,22 @@ const AddProduct = () => {
 
     const newProduct = { image, name, brand, type, price, description, rating };
 
-    fetch("http://localhost:5000/add", {
-      method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    })
+    fetch(
+      "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add",
+      {
+        method: "post",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-            Swal.fire(
-                'Success!',
-                'Product has been added!',
-                'success'
-              )
-              form.reset();
+          Swal.fire("Success!", "Product has been added!", "success");
+          form.reset();
         }
       });
   };
@@ -93,7 +92,10 @@ const AddProduct = () => {
               name="option"
               className="select select-bordered  w-full border"
               onChange={handleChange}
-            ><option disabled selected>Chose Type</option>
+            >
+              <option disabled selected>
+                Chose Type
+              </option>
               <option>Phone</option>
               <option>Computer</option>
               <option>HeadPhone</option>
@@ -118,8 +120,11 @@ const AddProduct = () => {
             <label className="label">
               <span className="label-text">Description</span>
             </label>
-            <textarea className="textarea textarea-bordered" name="description" placeholder="Description">
-            </textarea>
+            <textarea
+              className="textarea textarea-bordered"
+              name="description"
+              placeholder="Description"
+            ></textarea>
           </div>
         </div>
         <div className="form-control md:w-1/2">
@@ -138,7 +143,6 @@ const AddProduct = () => {
           <button className="btn btn-primary">Add Product</button>
         </div>
       </form>
-      
     </div>
   );
 };

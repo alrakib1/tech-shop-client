@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const LogIn = () => {
   const location = useLocation();
@@ -16,7 +17,11 @@ const LogIn = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result);
-        Swal.fire("Log In Successful!", "success");
+        Swal.fire(
+          "Log In Successful!",
+          "user logged in successfully",
+          "success"
+        );
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
         }, 3000);
@@ -39,7 +44,11 @@ const LogIn = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        Swal.fire("Log In Successful!", "success");
+        Swal.fire(
+          "Log In Successful!",
+          "user logged in successfully",
+          "success"
+        );
         const name = result.user.displayName;
         const photo = result.user.photoURL;
         updateUser(name, photo);

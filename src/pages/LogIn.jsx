@@ -1,41 +1,60 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const LogIn = () => {
-
-  const {signInUser, signInWithGoogle, updateUser  } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { signInUser, signInWithGoogle, updateUser } = useContext(AuthContext);
   const handleLogIn = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
+
     // sign in user
 
     signInUser(email, password)
       .then((result) => {
         console.log(result);
+        Swal.fire("Log In Successful!", "success");
+        setTimeout(() => {
+          navigate(location?.state ? location.state : "/");
+        }, 3000);
       })
       .catch((error) => {
         console.log(error);
+        if (`Firebase: Error (auth/invalid-login-credentials).`) {
+          Swal.fire(
+            "Wrong email or password!",
+            "Please check your email and password",
+            "warning"
+          );
+          return;
+        }
       });
   };
 
   // google signIN
 
   const handleGoogleSignIn = () => {
-    signInWithGoogle().then((result) => {
-      
-      const name = result.user.displayName;
-      const photo = result.user.photoURL;
-      updateUser(name,photo)
-    });
+    signInWithGoogle()
+      .then((result) => {
+        Swal.fire("Log In Successful!", "success");
+        const name = result.user.displayName;
+        const photo = result.user.photoURL;
+        updateUser(name, photo);
+
+        setTimeout(() => {
+          navigate(location?.state ? location.state : "/");
+        }, 3000);
+      })
+      .catch();
   };
 
   return (
     <div className="md:w-1/2 lg:w-2/6 mx-auto max-w-7xl min-h-screen">
-        <div className="hero-content">
-          <div className="card w-full shadow-2xl bg-base-100">
+      <div className="hero-content">
+        <div className="card w-full shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={handleLogIn}>
             <div className="form-control">
               <label className="label">

@@ -6,8 +6,7 @@ import { useState } from "react";
 const MyCart = () => {
     const carts = useLoaderData();
     const [products, setProducts] = useState(carts)
-    console.log(carts)
-    console.log(products)
+    
    return(
     <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-semibold pl-4">Your Cart</h2>

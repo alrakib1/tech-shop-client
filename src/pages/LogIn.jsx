@@ -1,26 +1,20 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const LogIn = () => {
-
-    const navigate = useNavigate();
 
   const {signInUser, signInWithGoogle, updateUser  } = useContext(AuthContext);
   const handleLogIn = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
-
+    
     // sign in user
 
     signInUser(email, password)
       .then((result) => {
         console.log(result);
-        setTimeout(() => {
-            navigate('/')
-        }, 3000);
       })
       .catch((error) => {
         console.log(error);
@@ -31,22 +25,17 @@ const LogIn = () => {
 
   const handleGoogleSignIn = () => {
     signInWithGoogle().then((result) => {
-      console.log(result.user);
+      
       const name = result.user.displayName;
       const photo = result.user.photoURL;
-      console.log(name,photo);
       updateUser(name,photo)
-      setTimeout(() => {
-        navigate('/')
-    }, 3000);
     });
   };
 
   return (
-    <div className="max-w-7xl mx-auto mb-10">
-      <div className="hero-content ">
-        
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="md:w-1/2 lg:w-2/6 mx-auto max-w-7xl min-h-screen">
+        <div className="hero-content">
+          <div className="card w-full shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={handleLogIn}>
             <div className="form-control">
               <label className="label">
@@ -94,7 +83,7 @@ const LogIn = () => {
           </div>
           <p className="text-center mb-6">
             New Here ?{" "}
-            <Link className="text-blue-600" to="/register">
+            <Link className="text-blue-600 font-bold" to="/register">
               Register
             </Link>{" "}
             now

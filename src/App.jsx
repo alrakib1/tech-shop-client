@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 function App() {
 
   return (
-    <div >
+    <div>
       <Header></Header>
       <Navbar></Navbar>
       <Outlet></Outlet>

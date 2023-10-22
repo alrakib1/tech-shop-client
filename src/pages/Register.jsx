@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const Register = () => {
@@ -25,10 +26,9 @@ const {registerUser,updateUser}= useContext(AuthContext);
         })
     }
     return (
-        <div className="max-w-7xl mx-auto mb-10">
-      <div className="hero-content ">
-        
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="lg:w-2/6 md:w-1/2 mx-auto max-w-7xl min-h-screen ">
+        <div className="hero-content">
+          <div className="card w-full shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handleRegister}>
               <div className="form-control">
                 <label className="label">
@@ -61,6 +61,7 @@ const {registerUser,updateUser}= useContext(AuthContext);
                 <button className="btn btn-primary">Register</button>
               </div>
             </form>
+            <p className="text-center mb-10">Already Have An Account ? <Link className="text-blue-600 font-bold" to='/login'>Log In </Link>here</p>
           </div>
         </div>
       </div>

@@ -26,7 +26,7 @@ const AuthProvider = ({children}) => {
             displayName : name,
             photoURL: photo
         }).then(()=>{
-            console.log('profile updated')
+            
         }).catch(error=>{
             console.log(error)
         })

@@ -7,7 +7,7 @@ const Details = () => {
     const {image, name, brand, type, price, description, rating}= useLoaderData();
 
     const newItem = {
-      image,name,brand,type,price,description,rating
+      image,name,brand,type,price,rating
     }
     console.log(newItem)
     const handleAddCart = (id)=>{

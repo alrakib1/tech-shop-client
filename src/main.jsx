@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/mycart"
+            "https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/mycart"
           ),
       },
       {
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         element: <GoogleProducts></GoogleProducts>,
         loader: () =>
           fetch(
-            "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add"
+            "https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add"
           ),
       },
       {
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
         element: <AppleProducts></AppleProducts>,
         loader: () =>
           fetch(
-            "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add"
+            "https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add"
           ),
       },
       {
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
         element: <DellProducts></DellProducts>,
         loader: () =>
           fetch(
-            "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add"
+            "https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add"
           ),
       },
       {
@@ -86,7 +86,7 @@ const router = createBrowserRouter([
         element: <HpProducts></HpProducts>,
         loader: () =>
           fetch(
-            "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add"
+            "https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add"
           ),
       },
       {
@@ -94,7 +94,7 @@ const router = createBrowserRouter([
         element: <SamsungProducts></SamsungProducts>,
         loader: () =>
           fetch(
-            "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add"
+            "https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add"
           ),
       },
       {
@@ -102,7 +102,7 @@ const router = createBrowserRouter([
         element: <NokiaProduct></NokiaProduct>,
         loader: () =>
           fetch(
-            "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add"
+            "https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add"
           ),
       },
 
@@ -115,7 +115,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add/${params.id}`
+            `https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add/${params.id}`
           ),
       },
       {
@@ -127,7 +127,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add/${params.id}`
+            `https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add/${params.id}`
           ),
       },
     ],

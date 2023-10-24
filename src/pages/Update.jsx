@@ -30,7 +30,7 @@ const Update = () => {
       rating,
     };
     fetch(
-      `https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add/${_id}`,
+      `https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add/${_id}`,
       {
         method: "PUT",
         headers: {
@@ -41,7 +41,6 @@ const Update = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount <= 1) {
           Swal.fire("Success!", "Product has been updated!", "success");
         }

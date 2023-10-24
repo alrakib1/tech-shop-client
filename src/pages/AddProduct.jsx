@@ -17,12 +17,11 @@ const AddProduct = () => {
     const price = e.target.price.value;
     const description = e.target.description.value;
     const rating = e.target.rating.value;
-    console.log(name, image, brand, price, description, rating, type);
 
     const newProduct = { image, name, brand, type, price, description, rating };
 
     fetch(
-      "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/add",
+      "https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/add",
       {
         method: "post",
         headers: {

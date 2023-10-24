@@ -15,9 +15,8 @@ const Details = () => {
     rating,
   };
   const handleAddCart = () => {
-
     fetch(
-      "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/mycart",
+      "https://technology-shop-server-alrakib1-rakibs-projects-5f41d311.vercel.app/mycart",
       {
         method: "post",
         headers: {
@@ -28,7 +27,6 @@ const Details = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire(
             "Success!",
@@ -41,9 +39,9 @@ const Details = () => {
 
   return (
     <div className="hero max-w-7xl mx-auto mb-10">
-       <Helmet>
-          <title>{`Details || ${name}`}</title>
-        </Helmet>
+      <Helmet>
+        <title>{`Details || ${name}`}</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row">
         <img src={image} className="w-1/2 rounded-lg shadow-2xl" />
         <div>

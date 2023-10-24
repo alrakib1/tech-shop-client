@@ -8,7 +8,7 @@ const NokiaProduct = () => {
   const data = useLoaderData();
     
     const nokiaProducts = data.filter((data) => data.brand == "Nokia");
-    console.log(nokiaProducts)
+  
     if(nokiaProducts.length <= 0){
         return (
             <div

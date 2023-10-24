@@ -13,6 +13,8 @@ const GoogleProducts = () => {
     );
   }
   const googleProducts = data.filter((data) => data.brand == "Google");
+  console.log(data)
+  console.log(googleProducts)
   
   if(googleProducts.length <= 0){
       return (

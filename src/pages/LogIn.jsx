@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const LogIn = () => {
   const location = useLocation();
@@ -62,6 +63,9 @@ const LogIn = () => {
 
   return (
     <div className="md:w-1/2 lg:w-2/6 mx-auto max-w-7xl min-h-screen">
+      <Helmet>
+          <title>TechLand || Log In</title>
+        </Helmet>
       <div className="hero-content">
         <div className="card w-full shadow-2xl bg-base-100">
           <form className="card-body" onSubmit={handleLogIn}>

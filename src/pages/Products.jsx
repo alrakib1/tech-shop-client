@@ -1,10 +1,12 @@
+
 import { Link } from "react-router-dom";
 
 
 const Products = ({product}) => {
-    const {_id, image, name, brand, type, price, description, rating} = product;
+    const {_id, image, name, brand, type, price, rating} = product;
     return (
             <div className="card w-1/2 bg-base-100 shadow-xl mx-auto">
+               
   <figure className="px-10 pt-10">
     <img src={image} className="rounded-xl w-1/2" />
   </figure>

@@ -1,8 +1,8 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Details = () => {
-  const { id } = useParams();
   const { image, name, brand, type, price, description, rating } =
     useLoaderData();
 
@@ -14,9 +14,8 @@ const Details = () => {
     price,
     rating,
   };
-  console.log(newItem);
-  const handleAddCart = (id) => {
-    console.log(id);
+  const handleAddCart = () => {
+
     fetch(
       "https://technology-shop-server-7aa3x7vnr-rakibs-projects-5f41d311.vercel.app/mycart",
       {
@@ -42,6 +41,9 @@ const Details = () => {
 
   return (
     <div className="hero max-w-7xl mx-auto mb-10">
+       <Helmet>
+          <title>{`Details || ${name}`}</title>
+        </Helmet>
       <div className="hero-content flex-col lg:flex-row">
         <img src={image} className="w-1/2 rounded-lg shadow-2xl" />
         <div>
@@ -53,7 +55,7 @@ const Details = () => {
             <p className="font-bold">Price : ${price}</p>
             <p className="font-bold">Rating : {rating}</p>
           </div>
-          <button onClick={() => handleAddCart(id)} className="btn btn-primary">
+          <button onClick={() => handleAddCart()} className="btn btn-primary">
             Add to Cart
           </button>
         </div>

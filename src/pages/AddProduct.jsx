@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 const AddProduct = () => {
   const [option, setOption] = useState();
@@ -42,6 +43,9 @@ const AddProduct = () => {
 
   return (
     <div className="max-w-7xl mx-auto mb-10">
+      <Helmet>
+        <title>TechLand || Add Product</title>
+      </Helmet>
       <form onSubmit={handleAdd}>
         {/* image and name form */}
         <div className="md:flex gap-4">

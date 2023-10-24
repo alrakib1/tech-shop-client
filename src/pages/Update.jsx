@@ -13,7 +13,6 @@ const Update = () => {
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    const form = e.target;
     const image = e.target.image.value;
     const name = e.target.name.value;
     const brand = e.target.brand.value;

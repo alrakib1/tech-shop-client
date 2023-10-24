@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import UserReview from "../components/UserReview";
 
 const Home = () => {
   const [theme, setTheme] = useState(
@@ -188,6 +189,10 @@ const Home = () => {
         <SwiperSlide><img src="https://i.ibb.co/zhGxqTb/1669043087-google-pixel-7-pro-1669043068.jpg" alt="1669043087-google-pixel-7-pro-1669043068" border="0" /></SwiperSlide>
         <SwiperSlide><img src="https://i.postimg.cc/Wb3chSKy/ezgif-com-crop.jpg" alt="download-3" border="0" /></SwiperSlide>
       </Swiper>
+      <hr className="mt-28 w-1/2 mx-auto" />
+      <h3 className="text-3xl font-semibold text-center mt-3 mb-3">See Our Users Reviews</h3>
+      <hr className="mb-20 w-1/2 mx-auto" />
+      <UserReview></UserReview>
     </div>
   );
 };

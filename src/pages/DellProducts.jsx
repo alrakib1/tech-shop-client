@@ -1,21 +1,15 @@
-import { useContext } from "react";
+
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { AuthContext } from "../providers/AuthProvider";
 import Products from "./Products";
 
 // Import Swiper styles
 import "swiper/css";
 
 const DellProducts = () => {
-  const { loading } = useContext(AuthContext);
   const data = useLoaderData();
-  if (loading) {
-    return (
-      <span className="loading loading-bars loading-lg mx-auto max-w-7xl flex justify-center items-center"></span>
-    );
-  }
+ 
   const dellProducts = data.filter((data) => data.brand == "Dell");
 
   if (dellProducts.length <= 0) {

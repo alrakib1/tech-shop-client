@@ -1,18 +1,12 @@
-import { useContext } from "react";
+
 import { useLoaderData } from "react-router-dom";
-import { AuthContext } from "../providers/AuthProvider";
 import Products from "./Products";
 import { Helmet } from "react-helmet";
 
 
 const NokiaProduct = () => {
-    const { loading } = useContext(AuthContext);
-    const data = useLoaderData();
-    if (loading) {
-      return (
-        <span className="loading loading-bars loading-lg mx-auto max-w-7xl flex justify-center items-center"></span>
-      );
-    }
+  const data = useLoaderData();
+    
     const nokiaProducts = data.filter((data) => data.brand == "Nokia");
     console.log(nokiaProducts)
     if(nokiaProducts.length <= 0){

@@ -1,6 +1,5 @@
-import { useContext } from "react";
+
 import { useLoaderData } from "react-router-dom";
-import { AuthContext } from "../providers/AuthProvider";
 import Products from "./Products";
 import { Helmet } from "react-helmet";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,16 +8,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 const GoogleProducts = () => {
-  const { loading } = useContext(AuthContext);
   const data = useLoaderData();
-  if (loading) {
-    return (
-      <span className="loading loading-bars loading-lg mx-auto max-w-7xl flex justify-center items-center"></span>
-    );
-  }
+
   const googleProducts = data.filter((data) => data.brand == "Google");
-  console.log(data)
-  console.log(googleProducts)
+ 
   
   if(googleProducts.length <= 0){
       return (

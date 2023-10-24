@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Products from "./Products";
-import { useContext } from "react";
-import { AuthContext } from "../providers/AuthProvider";
+
 import { Helmet } from "react-helmet";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,13 +9,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 const AppleProducts = () => {
-    const { loading } = useContext(AuthContext);
-    const data = useLoaderData();
-    if (loading) {
-      return (
-        <span className="loading loading-bars loading-lg mx-auto max-w-7xl flex justify-center items-center"></span>
-      );
-    }
+  const data = useLoaderData();
+   
     const appleProducts = data.filter((data) => data.brand == "Apple");
     
     if(appleProducts.length <= 0){

@@ -45,6 +45,14 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error);
+        if(` Firebase: Error (auth/email-already-in-use)`){
+          Swal.fire(
+            "User Already Exists!",
+            "There is already an account with this email",
+            "warning"
+          );
+          return;
+        }
       });
   };
   return (

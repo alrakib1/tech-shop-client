@@ -16,7 +16,7 @@ This website is build with react js, mongodb. It's my first full stack project.
 
 ## Live website link
 
-https://tech-shop-c4224.web.app/
+https://techlandshop.netlify.app/
 
 
 ## Author

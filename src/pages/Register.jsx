@@ -28,7 +28,6 @@ const Register = () => {
       );
       return;
     }
-
     // register or create an user
 
     registerUser(email, password)
